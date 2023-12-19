@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tyuiu.ChazovaSR.Sprint7.Project.V7
 {
-    public partial class FormAbout : Form
+    public partial class FormAbout_CSR : Form
     {
-        public FormAbout()
+        public FormAbout_CSR()
         {
             InitializeComponent();
         }

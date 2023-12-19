@@ -1,7 +1,7 @@
 ﻿
 namespace Tyuiu.ChazovaSR.Sprint7.Project.V7
 {
-    partial class FormAbout
+    partial class FormAbout_CSR
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout_CSR));
             this.pictureBoxAvatar_CSR = new System.Windows.Forms.PictureBox();
             this.buttonOK_CSR = new System.Windows.Forms.Button();
             this.labelInfo_CSR = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7
             this.labelInfo_CSR.TabIndex = 5;
             this.labelInfo_CSR.Text = resources.GetString("labelInfo_CSR.Text");
             // 
-            // FormAbout
+            // FormAbout_CSR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,9 +74,10 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7
             this.Controls.Add(this.buttonOK_CSR);
             this.Controls.Add(this.labelInfo_CSR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormAbout";
+            this.Name = "FormAbout_CSR";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О программе";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar_CSR)).EndInit();
