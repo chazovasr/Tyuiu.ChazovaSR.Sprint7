@@ -30,11 +30,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7
 
         }
 
-        //private void оПрограммеToolStripMenuItem1_Click(object sender, EventArgs e)
-        //{
-        //    FormAbout_CSR formabout = new FormAbout_CSR();
-        //    formabout.Show();
-        //}
+        
 
 
 
