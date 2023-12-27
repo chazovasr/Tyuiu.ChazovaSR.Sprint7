@@ -8,7 +8,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
 {
     public class DataService
     {
-        public string[,] GetMatrix(string path) // возврашает данные из excel
+        public string[,] GetMatrix(string path) // возврашает таблицу данных из excel
         {
             string[] str = File.ReadAllLines(path);
 
@@ -30,7 +30,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
         }
 
 
-        public string[] ArrayStrEntrance(string[,] DataTable)
+        public string[] ArrayStrEntrance(string[,] DataTable) //возвращает массив номеров подъездов (чтобы отобразить потом на диаграмме)
         {
             int flag = 0;
             string strCountEntrance = "";
@@ -57,7 +57,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
         }
 
 
-        public int[] ArraySumFlatsInEntrance(object[,] DataTable, string[] Entrance)
+        public int[] ArraySumFlatsInEntrance(object[,] DataTable, string[] Entrance) //возвращает массив количества кваритр в каждом подьезде
         {
             int[] res = new int[Entrance.Length];
             for (int i = 0; i < Entrance.Length; i++)
@@ -71,7 +71,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
             return res;
         }
 
-        public int[] ArrayCountOwnOrRent(object[,] DataTable) // собственники или арендаторы
+        public int[] ArrayCountOwnOrRent(object[,] DataTable) // возвращает массив количества собственников или арендаторов
         {
             int[] res = new int[2];
             for (int i = 1; i < DataTable.GetLength(0); i++)
@@ -85,7 +85,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
         }
 
 
-        public string[,] SortMin(string[,] matrix, int NumberColumn)
+        public string[,] SortMin(string[,] matrix, int NumberColumn) // сортирует столбец по возрастанию
         {
             int[] Entrance = new int[matrix.GetLength(0) - 1];
             Entrance[Entrance.Length - 1] = Convert.ToInt32(matrix[matrix.GetLength(0) - 1, NumberColumn]);
@@ -123,7 +123,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
 
 
 
-        public string[,] SortMax(string[,] matrix, int NumberColumn)
+        public string[,] SortMax(string[,] matrix, int NumberColumn) //сортирует столбец по убыванию
         {
             int[] Entrance = new int[matrix.GetLength(0) - 1];
             Entrance[Entrance.Length - 1] = Convert.ToInt32(matrix[matrix.GetLength(0) - 1, NumberColumn]);
@@ -160,7 +160,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
         }
 
 
-        public string[,] SortMinOwnOrRent(string[,] matrix, int NumberColumn)
+        public string[,] SortMinOwnOrRent(string[,] matrix, int NumberColumn) //сортирует сначала собственников
         {
             string[,] SortMatrix = new string[matrix.GetLength(0), matrix.GetLength(1)];
 
@@ -205,7 +205,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
             return SortMatrix;
         }
 
-        public string[,] SortMaxOwnOrRent(string[,] matrix, int NumberColumn)
+        public string[,] SortMaxOwnOrRent(string[,] matrix, int NumberColumn) //сортировка арендаторов
         {
             string[,] SortMatrix = new string[matrix.GetLength(0), matrix.GetLength(1)];
 
@@ -232,7 +232,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
                 }
             }
 
-            for (int i = count; i < SortMatrix.GetLength(0); i++)
+            for (int i = count; i < SortMatrix.GetLength(0); i++)  
             {
                 for (int j = 1; j < matrix.GetLength(0); j++)
                 {
@@ -252,7 +252,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
 
 
 
-        public string[] Search(string[,] DataTable, string FIO)
+        public string[] Search(string[,] DataTable, string FIO) //оставляет только строки по совпадению (поиск)
         {
             string[] res = new string[7];
             for (int i = 0; i < DataTable.GetLength(0); i++)
@@ -268,7 +268,7 @@ namespace Tyuiu.ChazovaSR.Sprint7.Project.V7.Lib
             return res;
         }
 
-        public bool FlatExist(string path, int Entrance, int Flat)
+        public bool FlatExist(string path, int Entrance, int Flat) //проверяет существует ли данную квартира в БД(при удалении)
         {
             string[] strLines = File.ReadAllLines(path);
             bool res = false;
